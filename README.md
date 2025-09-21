@@ -2,8 +2,14 @@
 
 Decision support system for dental prosthesis planning — backend (Python) + frontend (React/Vite).
 This is a work-in-progress tool and not medical-ready.
+---
+
+## **Showcase**
+
+![Demo Screenshot](./assets/report.png)
 
 ---
+
 ## **Requirements**
 
 * Python 3.10+ (3.11 recommended)
