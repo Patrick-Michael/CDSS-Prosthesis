@@ -15,53 +15,54 @@ This is a work-in-progress tool and not medical-ready.
 
 ## **Quick start**
 
-### 1) Backend (API)
+### 1. Backend (API)
 
 #### macOS / Linux
 
-<pre>  bash
-  
+```bash
   cd backend
   python -m venv venv 
   source venv/bin/activate 
   pip install -r requirements.txt 
-  uvicorn main:app --reload --port 8000 </pre>
+  uvicorn main:app --reload --port 8000
+```
 
 #### Windows 
 
-<pre>  powerShell
-  
+``` powerShell
   cd backend
   python -m venv venv
   .\venv\Scripts\Activate.ps1
   pip install -r requirements.txt
-  uvicorn main:app --reload --port 8000 </pre>
+  uvicorn main:app --reload --port 8000 
+  ```
 
 
 Backend runs at http://localhost:8000
 
 Health check: GET /health → { "ok": true }
 
-### 2) Frontend (UI)
+
+### 2. Frontend (UI)
 
 ### macOS / Linux
 
-<pre>  bash
-  
+```  bash
   cd frontend
   cp .env.example .env      # first time only
   npm install
-  npm run dev </pre>
+  npm run dev 
+  ```
 
 
 ### Windows (PowerShell)
 
-<pre>  powershell
-  
+```  powershell
   cd frontend
   Copy-Item .env.example .env   # first time only
   npm install
-  npm run dev </pre>
+  npm run dev 
+  ```
 
 
 *Frontend runs at the URL Vite prints (usually http://localhost:5173).*
