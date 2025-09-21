@@ -8,7 +8,11 @@ This is a work-in-progress tool and not medical-ready.
 
 ![Demo Screenshot](./assets/report.png)
 
-![Demo GIF](./assets/Demo.gif)
+
+
+
+https://github.com/user-attachments/assets/2dc48d92-bddc-4d6b-b7c7-e46953e55143
+
 
 
 ---
