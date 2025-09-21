@@ -8,6 +8,9 @@ This is a work-in-progress tool and not medical-ready.
 
 ![Demo Screenshot](./assets/report.png)
 
+![Demo GIF](./assets/Demo.gif)
+
+
 ---
 
 ## **Requirements**
