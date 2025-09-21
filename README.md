@@ -5,11 +5,12 @@ This is a work-in-progress tool and not medical-ready.
 ---
 
 ## **Showcase**
+* **PDF final report example**
+  
+![Demo Screenshot](./assets/report.png)  
 
-![Demo Screenshot](./assets/report.png)
 
-
-
+* **Short video showcasing the user journey from start to end**
 
 https://github.com/user-attachments/assets/2dc48d92-bddc-4d6b-b7c7-e46953e55143
 
