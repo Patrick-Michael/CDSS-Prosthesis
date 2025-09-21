@@ -1,0 +1,16 @@
+# Global ignores for the whole repo
+
+# Environment
+.env
+.DS_Store
+
+# Python
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.venv/
+venv/
+
+# Node (if someone runs npm in root by accident)
+node_modules/
+dist/
