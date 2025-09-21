@@ -1,6 +1,6 @@
 # **CDSS-Prosthesis**
 
-Decision support system for dental prosthesis planning — backend (Python) + frontend (React/Vite).
+Decision support system for dental prosthesis planning; backend (Python) + frontend (React/Vite).
 This is a work-in-progress tool and not medical-ready.
 ---
 
