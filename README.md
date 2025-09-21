@@ -24,8 +24,6 @@ https://github.com/user-attachments/assets/2dc48d92-bddc-4d6b-b7c7-e46953e55143
 
 * Node.js 18+ (20 recommended), npm 9+
 
-* Git (optional if you download as ZIP)
-
 ---
 
 ## **Quick start**
