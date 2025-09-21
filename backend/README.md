@@ -43,14 +43,14 @@ This will start the backend server at: http://127.0.0.1:8000
 
 The backend exposes the following REST API endpoints:
 
-+ GET /api/health  
++ `GET /api/health`  
  Health check. Returns a simple JSON message if the backend is running.  
 
-+ GET /api/ontology  
++ `GET /api/ontology`  
  Retrieve ontology labels, templates, and rule metadata.  
  Used by the frontend to display human-readable names.  
 
-+ POST /api/plan  
++ `POST /api/plan`  
  Generate a treatment plan from the given case input JSON.  
   * Input: JSON object containing missing teeth, abutments, and patient conditions.  
   * Output: JSON object with span-level options, unified plans, rules triggered, and provenance.
@@ -59,8 +59,8 @@ The backend exposes the following REST API endpoints:
  
 ## Development Notes
 
-The rules engine logic is located in **rules_engine.py** and related **rules_* files**.
+The rules engine logic is located in `rules_engine.py` and related `rules_*` files.
 
-Ontology mappings and human-readable labels are handled in **ontology_layer.py**.
+Ontology mappings and human-readable labels are handled in `ontology_layer.py`.
 
-Input enrichment (abutments, patient risks) is handled by **enrichment_layer.py**.
+Input enrichment (abutments, patient risks) is handled by `enrichment_layer.py`.
