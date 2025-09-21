@@ -248,7 +248,7 @@ def eval_rbb(ctx: Dict[str, Any], patient_risk: Dict[str, Any], capabilities: Di
         return []
 
     pontic = ctx.get("pontic_tooth")
-    if not pontic or not is_anterior(str(pontic)):
+    if not pontic or not is_anterior(str(pontic)) or str(pontic)[1] == "3":
         return []
 
     # Neighbors: use mesial/distal abutments from ctx (span length 1)
@@ -354,3 +354,4 @@ def eval_cantilever(ctx: Dict[str, Any], patient_risk: Dict[str, Any], capabilit
     # Eligible
     card["meta"]["abutment"] = required_abut
     return [card]
+
