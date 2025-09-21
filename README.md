@@ -3,6 +3,7 @@
 Decision support system for dental prosthesis planning — backend (Python) + frontend (React/Vite).
 This is a work-in-progress tool and not medical-ready.
 
+---
 ## **Requirements**
 
 * Python 3.10+ (3.11 recommended)
@@ -11,7 +12,7 @@ This is a work-in-progress tool and not medical-ready.
 
 * Git (optional if you download as ZIP)
 
-
+---
 
 ## **Quick start**
 
@@ -45,7 +46,7 @@ Health check: GET /health → { "ok": true }
 
 ### 2. Frontend (UI)
 
-### macOS / Linux
+#### macOS / Linux
 
 ```  bash
   cd frontend
@@ -55,7 +56,7 @@ Health check: GET /health → { "ok": true }
   ```
 
 
-### Windows (PowerShell)
+#### Windows (PowerShell)
 
 ```  powershell
   cd frontend
