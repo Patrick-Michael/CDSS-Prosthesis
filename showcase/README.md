@@ -22,11 +22,17 @@ Patient-level conditions such as caries risk, occlusal scheme, parafunction, and
 
 ---
 
-## Step 4. Review generated plans
+## Step 4.1 Review generated plans
 The system ranks prosthesis options for each span. For multi-span cases, the system works out a unified plan.
 
 ![Plan results](./screen401.png)
 
+---
+
+## Step 4.2 Review unified plans
+Multi-span cases can be combined into one or more unified plans. 
+
+![Unified plan results](./screen403.png)
 ---
 
 ## Step 5. Generate a report
