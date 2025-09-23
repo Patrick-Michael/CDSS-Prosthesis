@@ -35,3 +35,7 @@ A printable case report summarizes inputs, options, and selected plans.
 ![Case overview](./screen5.png)
 
 [← Back to main README](../README.md)
+
+---
+ **Disclaimer**: This is an educational prototype and not a medical-ready tool.  
+
