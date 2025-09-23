@@ -1,7 +1,6 @@
 # **CDSS-Prosthesis**
 
 Decision support system for dental prosthesis planning; backend (Python) + frontend (React/Vite).
-This is a work-in-progress tool and not medical-ready.
 ---
 
 ## **Showcase**
@@ -75,3 +74,7 @@ Health check: GET /health → { "ok": true }
 
 
 *Frontend runs at the URL Vite prints (usually http://localhost:5173).*
+
+---
+**Disclaimer**: This is an educational prototype and not a medical-ready tool.  
+
