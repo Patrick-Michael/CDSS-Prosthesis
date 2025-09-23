@@ -2,7 +2,7 @@
 # Showcase
 
 ## Step 1. Mark missing teeth
-Click teeth to mark them as missing. Here, tooth 24 is selected as missing.
+Click teeth to mark them as missing. Here, tooth 24 (maxillary left first premolar) is selected as missing. Abutments are automatically determined. 
 
 ![Intake step](./screen1.png)
 
