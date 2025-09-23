@@ -5,7 +5,7 @@ This is a work-in-progress tool and not medical-ready.
 ---
 
 ## **Showcase**
-See the full [Showcase](./Showcase) with screenshots and workflow explanation.
+See the full [showcase](./showcase) with screenshots and workflow explanation.
 
 
 
