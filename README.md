@@ -67,7 +67,7 @@ Health check: GET /health → { "ok": true }
 
 ```  powershell
   cd frontend
-  Copy-Item .env.example .env   # first time only
+  copy .env.example .env   # first time only
   npm install
   npm run dev 
   ```
