@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend:
     build:
@@ -21,10 +19,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5174:5174"
+    environment:
+      - NODE_ENV=development
+      - VITE_API_BASE=http://backend:8000
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5174"
     volumes:
       - ./frontend:/web
-    environment:
-      - VITE_API_BASE=http://backend:8000
+      - frontend_node_modules:/web/node_modules
     depends_on:
       backend:
         condition: service_healthy
+
+volumes:
+  frontend_node_modules:
