@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 5174
 
 # Run Vite on 0.0.0.0 so Codespaces/Compose can forward it
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5174"]
+CMD ["npm", "run", "dev"]
