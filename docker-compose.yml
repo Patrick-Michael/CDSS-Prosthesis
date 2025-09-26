@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 5
 
-    frontend:
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -28,7 +28,6 @@ services:
     depends_on:
       backend:
         condition: service_healthy
-
 
 volumes:
   frontend_node_modules:
