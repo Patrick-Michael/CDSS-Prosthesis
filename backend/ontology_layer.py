@@ -92,8 +92,15 @@ def get_ontology() -> Dict[str, Any]:
     glossary = {row["key"]: row["text"] for row in cur.fetchall()}
 
     # --- options ---
-    cur.execute("SELECT key, nameTemplate FROM options")
-    options = {row["key"]: {"nameTemplate": row["nameTemplate"]} for row in cur.fetchall()}
+    cur.execute("SELECT key, label, short, description, nameTemplate FROM options")
+    options = {
+        row["key"]: {
+            "label": row["label"],
+            "short": row["short"],
+            "description": row["description"],
+            "nameTemplate": row["nameTemplate"]
+        } 
+        for row in cur.fetchall()}
 
 
     conn.close()
@@ -107,3 +114,4 @@ def get_ontology() -> Dict[str, Any]:
         "glossary": glossary,
         "options": options,
     }
+
