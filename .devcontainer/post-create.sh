@@ -3,12 +3,13 @@ set -euo pipefail
 
 echo " Codespace setup started"
 
-# Build & start your stack (detached)
-echo " docker compose up --build -d"
-docker compose up --build -d
+echo " Building images (with logs)…"
+docker compose build --progress=plain
 
-# Brief status
-echo " docker compose ps"
+echo " Starting containers (detached)…"
+docker compose up -d
+
+echo " Status:"
 docker compose ps
 
-echo "✅ Backend (8000) and Frontend (5174) are starting. Check the Ports tab."
+echo "✅ Ready. Open the Ports tab (5174 = Frontend, 8000 = API)."
