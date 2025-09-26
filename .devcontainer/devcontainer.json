@@ -8,17 +8,14 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
-  // After the devcontainer is created, build & start your stack in the background
-  "postCreateCommand": "docker compose up --build -d",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
 
-  // Forward the app ports
   "forwardPorts": [5174, 8000],
   "portsAttributes": {
     "5174": { "label": "Frontend (Vite)", "onAutoForward": "openBrowser" },
     "8000": { "label": "API (FastAPI)", "onAutoForward": "notify" }
   },
 
-  // Nice-to-have editor extensions
   "customizations": {
     "vscode": {
       "extensions": [
