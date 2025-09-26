@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 5
 
-  frontend:
+    frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -21,7 +21,6 @@ services:
       - "5174:5174"
     environment:
       - NODE_ENV=development
-      - VITE_API_BASE=http://backend:8000
     command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5174"
     volumes:
       - ./frontend:/web
@@ -29,6 +28,7 @@ services:
     depends_on:
       backend:
         condition: service_healthy
+
 
 volumes:
   frontend_node_modules:
