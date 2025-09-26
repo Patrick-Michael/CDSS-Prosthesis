@@ -21,7 +21,7 @@ See the full [showcase](./showcase) with screenshots and workflow explanation.
 
 ---
 
-## **Quick start**
+## **Quick start on your machine**
 
 ### 1. Backend (API)
 
@@ -74,6 +74,27 @@ Health check: GET /health → { "ok": true }
 
 
 *Frontend runs at the URL Vite prints (usually http://localhost:5173).*
+
+---
+
+## Run in GitHub Codespaces
+
+You can try this project directly in your browser using **GitHub Codespaces** – no local setup needed.
+
+1. Click this button to launch a Codespace on the main branch:
+
+   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Patrick-Michael/CDSS-Prosthesis?quickstart=1)
+
+2. Wait for the Codespace to build.  
+   - The development environment (Python, Node, Docker) is created automatically.  
+   - Backend and frontend services are built and started inside Docker.  
+
+3. Once setup is complete:  
+   - The **frontend** will be available on forwarded port **5174** → it should open in a browser tab automatically.  
+   - The **backend API** is available on forwarded port **8000**.
+
+> First-time startup may take a few minutes. After that, resuming a Codespace is much faster since the environment is cached.
+
 
 ---
 **Disclaimer**: This is an educational prototype and not a medical-ready tool.  
