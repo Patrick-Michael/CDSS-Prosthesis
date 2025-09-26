@@ -11,5 +11,5 @@ COPY . .
 
 EXPOSE 5174
 
-# Run Vite on 0.0.0.0 so Codespaces/Compose can forward it
-CMD ["npm", "run", "dev"]
+# Bind to 0.0.0.0 so port forwarding works from container
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5174"]
