@@ -61,6 +61,5 @@ The backend exposes the following REST API endpoints:
 
 The rules engine logic is located in `rules_engine.py` and related `rules_*` files.
 
-Ontology mappings and human-readable labels are handled in `ontology_layer.py`.
+Ontology mappings and human-readable labels are handled in `ontology_layer.py` and `data/ontology.db`.
 
-Input enrichment (abutments, patient risks) is handled by `enrichment_layer.py`.
