@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONPATH=/app
+
 
 WORKDIR /app
 
@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Dev server with reload
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "--app-dir", "/app", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
