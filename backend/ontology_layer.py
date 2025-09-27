@@ -8,7 +8,7 @@ from rules_engine import ENGINE_VERSION, RULESET_VERSION
 DB_PATH = Path(__file__).parent / "data" / "ontology.db"
 
 def get_ontology() -> Dict[str, Any]:
-    """Build ontology dictionary from SQLite database (mirrors old hardcoded structure)."""
+    """Build ontology dictionary from SQLite database."""
 
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -114,4 +114,5 @@ def get_ontology() -> Dict[str, Any]:
         "glossary": glossary,
         "options": options,
     }
+
 
