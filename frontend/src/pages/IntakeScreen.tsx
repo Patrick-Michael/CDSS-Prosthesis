@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ToothChartFDI from "../components/ToothChartFDI";
 import { fetchSpans, fetchEnums } from "../api";
-import type { SpansResponse, EnumsResponse } from "../api";
+//import type { SpansResponse, EnumsResponse } from "../api";
 import { useAppStore, type AbutHealth } from "../store";
 
 export default function IntakeScreen() {
@@ -419,3 +419,4 @@ function FieldSelect({
     </div>
   );
 }
+
