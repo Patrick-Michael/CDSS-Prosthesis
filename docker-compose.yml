@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend:
     build:
@@ -10,8 +8,9 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONDONTWRITEBYTECODE=1
-    volumes:
-      - ./backend:/app
+    # remove the bind mount; rely on image COPY
+    # volumes:
+    #   - ./backend:/app
     healthcheck:
       test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
       interval: 10s
@@ -28,15 +27,12 @@ services:
       - "5174:5174"
     environment:
       - NODE_ENV=development
-    # If you want faster starts, remove `npm ci` here; deps are already installed in the image.
     command: sh -c "npm run dev -- --host 0.0.0.0 --port 5174"
-    volumes:
-      - ./frontend:/web
-      - frontend_node_modules:/web/node_modules
+    # remove the bind mount
+    # volumes:
+    #   - ./frontend:/web
+    #   - frontend_node_modules:/web/node_modules
     depends_on:
       backend:
         condition: service_healthy
     restart: unless-stopped
-
-volumes:
-  frontend_node_modules:
