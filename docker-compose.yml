@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   backend:
     build:
@@ -14,7 +16,9 @@ services:
       test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
       interval: 10s
       timeout: 3s
-      retries: 10
+      retries: 20
+      start_period: 20s
+    restart: unless-stopped
 
   frontend:
     build:
@@ -24,13 +28,15 @@ services:
       - "5174:5174"
     environment:
       - NODE_ENV=development
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5174"
+    # If you want faster starts, remove `npm ci` here; deps are already installed in the image.
+    command: sh -c "npm run dev -- --host 0.0.0.0 --port 5174"
     volumes:
       - ./frontend:/web
       - frontend_node_modules:/web/node_modules
     depends_on:
       backend:
         condition: service_healthy
+    restart: unless-stopped
 
 volumes:
   frontend_node_modules:
