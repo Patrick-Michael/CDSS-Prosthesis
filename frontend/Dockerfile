@@ -1,26 +1,16 @@
-# Build stage
-FROM node:20-slim AS build
+FROM node:20-slim
+
 WORKDIR /web
+
 COPY package*.json ./
 RUN npm ci
+
 COPY . .
+
+# Build frontend once
 RUN npm run build
 
-# Runtime stage
-FROM nginx:alpine
-# Minimal SPA config with history fallback to /index.html
-RUN printf '%s\n' \
-  'server {' \
-  '  listen 80;' \
-  '  server_name _;' \
-  '  root /usr/share/nginx/html;' \
-  '  index index.html;' \
-  '  location / {' \
-  '    try_files $uri /index.html;' \
-  '  }' \
-  '}' \
-  > /etc/nginx/conf.d/default.conf
+EXPOSE 5173
 
-COPY --from=build /web/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Use Vite's built-in preview server
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
