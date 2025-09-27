@@ -95,6 +95,35 @@ You can try this project directly in your browser using **GitHub Codespaces** â€
 
 > First-time startup may take a few minutes. After that, resuming a Codespace is much faster since the environment is cached.
 
+---
+
+## **Useful Docker Commands**
+
+After starting the Codespace and building the containers, you can manage the stack with these commands:
+
+### Starting / Stopping (After stopping the codespace, restarting it requires this Docker command)
+```bash
+# Start (or restart) everything in the background
+docker compose up -d
+
+# Stop everything
+docker compose down
+```
+
+**Checking Status & Logs**
+```bash
+# Show container status
+docker compose ps
+
+# Follow logs from all services
+docker compose logs -f
+
+# View logs from backend only
+docker compose logs -f backend
+
+# View logs from frontend only
+docker compose logs -f frontend
+```
 
 ---
 **Disclaimer**: This is an educational prototype and not a medical-ready tool.  
