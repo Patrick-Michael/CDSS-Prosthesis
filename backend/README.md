@@ -43,7 +43,7 @@ This will start the backend server at: http://127.0.0.1:8000
 
 The backend exposes the following REST API endpoints:
 
-+ `GET /api/health`  
++ `GET /health`  
  Health check. Returns a simple JSON message if the backend is running.  
 
 + `GET /api/ontology`  
