@@ -71,7 +71,7 @@ function buildPatientRiskFromEnums(enums: EnumsResponse | null): PatientRisk {
 
 /* ---------------- Store ---------------- */
 
-export const useAppStore = create<AppState>()((set, get) => ({
+export const useAppStore = create<AppState>()((set) => ({
   // Data
   missing: new Set<string>(),
   preview: null,
@@ -154,3 +154,4 @@ export const useAppStore = create<AppState>()((set, get) => ({
   // Internal
   _riskInitialized: false,
 }));
+
