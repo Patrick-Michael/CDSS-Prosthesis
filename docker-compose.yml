@@ -1,3 +1,4 @@
+
 services:
   backend:
     build:
@@ -20,7 +21,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "80:5173"
     restart: unless-stopped
     depends_on:
       backend:
