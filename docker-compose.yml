@@ -5,11 +5,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONDONTWRITEBYTECODE=1
-    volumes:
-      - ./backend:/app
     healthcheck:
       test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
       interval: 10s
@@ -21,17 +20,13 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "5174:5174"
-    environment:
-      - NODE_ENV=development
-    
-    command: sh -c "npm run dev -- --host 0.0.0.0 --port 5174"
-    volumes:
-      - ./frontend:/web
-      - frontend_node_modules:/web/node_modules
+      - "80:80"
+    restart: unless-stopped
     depends_on:
       backend:
         condition: service_healthy
-
-volumes:
-  frontend_node_modules:
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
