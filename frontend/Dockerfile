@@ -1,15 +1,26 @@
-FROM node:20-slim
-
+# Build stage
+FROM node:20-slim AS build
 WORKDIR /web
-
-# Install dependencies first (better cache)
 COPY package*.json ./
 RUN npm ci
-
-# Copy frontend code (Compose also mounts it for live dev)
 COPY . .
+RUN npm run build
 
-EXPOSE 5174
+# Runtime stage
+FROM nginx:alpine
+# Minimal SPA config with history fallback to /index.html
+RUN printf '%s\n' \
+  'server {' \
+  '  listen 80;' \
+  '  server_name _;' \
+  '  root /usr/share/nginx/html;' \
+  '  index index.html;' \
+  '  location / {' \
+  '    try_files $uri /index.html;' \
+  '  }' \
+  '}' \
+  > /etc/nginx/conf.d/default.conf
 
-# Bind to 0.0.0.0 so port forwarding works from container
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5174"]
+COPY --from=build /web/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
