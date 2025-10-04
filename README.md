@@ -3,7 +3,7 @@
 Decision support system for dental prosthesis planning; backend (Python) + frontend (React/Vite).
 ---
 
-## **Showcase**
+## **Showcase & User Journey**
 See the full [showcase](./showcase) with screenshots and workflow explanation.
 
 ---
