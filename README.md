@@ -1,6 +1,7 @@
 # **CDSS-Prosthesis**
 
 Decision support system for dental prosthesis planning; backend (Python) + frontend (React/Vite).
+
 ---
 
 ## **Showcase & User Journey**
